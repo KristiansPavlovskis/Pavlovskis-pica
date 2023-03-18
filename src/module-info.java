@@ -6,4 +6,5 @@
  *
  */
 module Pavlovskis_pica {
+	requires java.desktop;
 }
