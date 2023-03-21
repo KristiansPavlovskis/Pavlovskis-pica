@@ -1,20 +1,36 @@
 package Package;
 
+import javax.swing.JOptionPane;
 
-public class Pizza{
-	public String merce,toppings,perVards;
-	public int lielums,Talr,adress;
+public class Pizza implements Comparable<Pizza>{
+	public String merce,perVards,Talr,adress;
+	String piedevas,piedevas2,piedevas3;
+	public int lielums;
 	
-	public Pizza(String merce, String toppings, String perVards,int lielums,int Talr,int adress) {
+	//perVards,Talr, adress, Talr, Talr, picLielums
+	public Pizza(String perVards,String Talr,String adress, String merce, String piedevas,String piedevas2,String piedevas3,int lielums) {
 		this.merce = merce;
-		this.toppings = toppings;
+		this.piedevas = piedevas;
+		this.piedevas2 = piedevas;
+		this.piedevas3 = piedevas;
 		this.lielums=lielums;
 		this.perVards=perVards;
 		this.Talr=Talr;
 		this.adress=adress;
 	}
-	public String getToppings() {
-		return toppings;
+//	public void Pizza1(String perVards,String Talr,int adress) {
+//		this.perVards=perVards;
+//		this.Talr=Talr;
+//		this.adress=adress;
+//	}
+	public String getPiedevas() {
+		return piedevas;
+	}
+	public String getPiedevas2() {
+		return piedevas2;
+	}
+	public String getPiedevas3() {
+		return piedevas3;
 	}
 	public int getLielums() {
 		return lielums;
@@ -25,14 +41,14 @@ public class Pizza{
 	public String getperVards() {
 		return perVards;
 	}
-	public int getTalr() {
+	public String getTalr() {
 		return Talr;
 	}
-	public int getAdress() {
+	public String getAdress() {
 		return adress;
 	}
-	public String setToppings(String toppings) {
-		return toppings;
+	public String setPiedevas(String piedevas) {
+		return piedevas;
 	}
 	public int setLielums(int lielums) {
 		return lielums;
@@ -43,12 +59,22 @@ public class Pizza{
 	public String setperVards(String perVards) {
 		return perVards;
 	}
-	public int setTalr(int Talr) {
+	public String setTalr(String Talr) {
 		return Talr;
 	}
-	public int setAdress(int adress) {
+	public String setAdress(String adress) {
 		return adress;
 	}
+public void izvadit(String adress,String Talr,String perVards,String merce,String piedevas,int Lielums) {
+		
+		 JOptionPane.showMessageDialog(null, "šī pica tiks atvesta drīz uz vārdu: "+perVards+" ar telefona nummuru: "+Talr+" Un adresi: "+adress);
+		 JOptionPane.showMessageDialog(null, "+"+merce+"+"+piedevas+"+"+Lielums);
+	}
+@Override
+public int compareTo(Pizza o) {
+	// TODO Auto-generated method stub
+	return 0;
+}
 	
 	
 	
