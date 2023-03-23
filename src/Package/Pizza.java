@@ -1,11 +1,25 @@
 package Package;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 
 public class Pizza implements Comparable<Pizza>{
-	public String merce,perVards,Talr,adress;
-	String piedevas,piedevas2,piedevas3;
-	public int lielums;
+	public static String merce;
+	public String perVards;
+	public String Talr;
+	public String adress;
+	static String piedevas;
+	static String piedevas2;
+	static String piedevas3;
+	public static int lielums;
 	
 	//perVards,Talr, adress, Talr, Talr, picLielums
 	public Pizza(String perVards,String Talr,String adress, String merce, String piedevas,String piedevas2,String piedevas3,int lielums) {
@@ -65,21 +79,53 @@ public class Pizza implements Comparable<Pizza>{
 	public String setAdress(String adress) {
 		return adress;
 	}
-public void izvadit(String adress,String Talr,String perVards,String merce,String piedevas,int Lielums) {
+	static void kopums(String fNosaukums){
+		try{
+//			File fails = new File("kopums.txt");
+			FileWriter fw= new FileWriter(fNosaukums,false);
+			PrintWriter pw= new PrintWriter(fw);
+
+
+			pw.println("šīs picas mērce ir: "+merce+"\nšīs picas piedevas ir: "+piedevas+" + "+piedevas2+" + "+piedevas2+"\nŠīs picas lielums ir: "+lielums);
+			pw.close();
+			
+			
+			
+			}catch(Exception e){
+				JOptionPane.showMessageDialog(null,"Radas kluda","Kluda",JOptionPane.ERROR_MESSAGE);
+			}
+	}
+	static void Apskatit(String fNosaukums){
+		try{
+			String teksts,str="";
+			
+				FileReader fr = new FileReader(fNosaukums);
+				BufferedReader br = new BufferedReader(fr);
+				while((teksts=br.readLine())!=null){
+					str += teksts+"\n";
+				}
+					br.close();
+				
+				JOptionPane.showMessageDialog(null, str,"Pasaka",JOptionPane.INFORMATION_MESSAGE);
+				
+				
+				
+			}catch(Exception e){
+				JOptionPane.showMessageDialog(null,"Radas kluda","Kluda",JOptionPane.ERROR_MESSAGE);
+			}
+	}
+	
+public void izvadit(String adress,String Talr,String perVards,String merce,String piedevas,int lielums) {
 		
 		 JOptionPane.showMessageDialog(null, "šī pica tiks atvesta drīz uz vārdu: "+perVards+" ar telefona nummuru: "+Talr+" Un adresi: "+adress);
-		 JOptionPane.showMessageDialog(null, "+"+merce+"+"+piedevas+"+"+Lielums);
+		 JOptionPane.showMessageDialog(null, "šīs picas mērce ir: "+merce+"\nšīs picas piedevas ir: "+piedevas+" + "+piedevas2+" + "+piedevas2+"\nŠīs picas lielums ir: "+lielums);
 	}
 @Override
 public int compareTo(Pizza o) {
 	// TODO Auto-generated method stub
 	return 0;
 }
-	
-	
-	
-	
-	
-	
 
+	
+	
 }

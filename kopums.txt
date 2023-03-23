@@ -1,0 +1,3 @@
+šīs picas mērce ir: null
+šīs picas piedevas ir: null + null + null
+Šīs picas lielums ir: 0
