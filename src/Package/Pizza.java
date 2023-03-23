@@ -118,7 +118,7 @@ public class Pizza implements Comparable<Pizza>{
 			}
 	}
 	
-public void izvadit(String adress,String Talr,String perVards,String merce,String piedevas,int lielums) {
+public static void izvadit(String adress,String Talr,String perVards,String merce,String piedevas,int lielums) {
 		
 		 JOptionPane.showMessageDialog(null, "šī pica tiks atvesta drīz uz vārdu: "+perVards+" ar telefona nummuru: "+Talr+" Un adresi: "+adress);
 		 JOptionPane.showMessageDialog(null, "šīs picas mērce ir: "+merce+"\nšīs picas piedevas ir: "+piedevas+" + "+piedevas2+" + "+piedevas2+"\nŠīs picas lielums ir: "+lielums);
