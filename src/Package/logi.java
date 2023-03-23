@@ -35,7 +35,7 @@ public class logi extends JFrame implements ActionListener{
 	    Pasutit.setOpaque(false);
 	    Pasutit.setContentAreaFilled(false);
 	    Pasutit.setBorderPainted(false);
-	    frame.add(Pasutit);
+	     frame.add(Pasutit);
 	    
 	    Klatiene.setBounds(430,530,270,60);
 	    Klatiene.addActionListener(this);
