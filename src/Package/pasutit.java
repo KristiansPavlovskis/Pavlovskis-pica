@@ -43,12 +43,6 @@ public class pasutit extends JFrame implements ActionListener{
 	    JLabel backgroundLabel = new JLabel(scaledImageIcon);
 	    panel.add(backgroundLabel, BorderLayout.CENTER);
 
-//	    Pasutit.setBounds(8,530,270,60);
-//	    Pasutit.addActionListener(this);
-//	    Pasutit.setOpaque(false);
-//	    Pasutit.setContentAreaFilled(false);
-//	    Pasutit.setBorderPainted(false);
-//	     frame.add(Pasutit);
 	    JCheckBox checkbox1 = new JCheckBox("");   
 	    JCheckBox checkbox2 = new JCheckBox("");
 	    JCheckBox checkbox3 = new JCheckBox("");
@@ -113,13 +107,8 @@ public class pasutit extends JFrame implements ActionListener{
 	    
 	    frame.add(panel);
 	    frame.setVisible(true);
-	    
-	    
-	    
-	  
 		persona = new Pizza(perVards, Talr, adress, merce, piedevas, piedevas2, piedevas3,lielums);
 
-     
 }
 		@Override
 
