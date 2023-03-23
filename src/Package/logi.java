@@ -50,13 +50,13 @@ public class logi extends JFrame implements ActionListener{
 		@Override
 
 		public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==Klatiene) {
+		if(e.getSource()==Pasutit) {
 		frame.dispose();
-		pasutit PicaKlatiene = new pasutit();
+		pasutit PicaPasutisana = new pasutit();
 
-		}else if(e.getSource()==Pasutit) {
+		}else if(e.getSource()==Klatiene) {
 			frame.dispose();
-			pasutit PicaKlatiene = new pasutit();
+			Klatiene PicaKlatiene = new Klatiene();
 
 			}
        
