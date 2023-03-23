@@ -6,7 +6,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
@@ -125,6 +128,43 @@ public int compareTo(Pizza o) {
 	// TODO Auto-generated method stub
 	return 0;
 }
+public static void fill() {
+	JFrame f;
+    JProgressBar b;
+     
+     f = new JFrame("Picērija");
+      JPanel p = new JPanel();
+      b = new JProgressBar();
+      b.setValue(0);
+      b.setStringPainted(true);
+      p.add(b);
+      f.add(p);
+      f.setSize(200, 200);
+      f.setVisible(true);
+        int i = 0;
+        try {
+            while (i <= 100) {
+                // set text according to the level to which the bar is filled
+                if (i > 30 && i < 70)
+                    b.setString("Tika ielikta cepenē");
+                else if (i > 70)
+                    b.setString("Piegāde ir ceļā");
+                else
+                    b.setString("Tiek taisīta pica");
+ 
+                // fill the menu bar
+                b.setValue(i + 10);
+ 
+                // delay the thread
+                Thread.sleep(3000);
+                i += 20;
+            }
+            f.setVisible(false);
+        }
+        catch (Exception e) {
+        }
+    }
+
 
 	
 	
