@@ -1,39 +1,43 @@
 package Package;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 public class Pizza implements Comparable<Pizza>{
-	public static String merce;
-	public String perVards;
-	public String Talr;
-	public String adress;
-	static String piedevas;
-	static String piedevas2;
-	static String piedevas3;
-	public static int lielums;
+	 int lielums;
+	 String merce;
+	 String perVards;
+	 String Talr;
+	 String adress;
+	String  piedevas;
+	 static String piedevas2;
+	 static String piedevas3;
+	//public static int lielums;
+	 String setMerce;
+	// int lielums;
+	int setLielums;
+	static int currentLielums;
 	
 	//perVards,Talr, adress, Talr, Talr, picLielums
 	public Pizza(String perVards,String Talr,String adress, String merce, String piedevas,String piedevas2,String piedevas3,int lielums) {
 		this.merce = merce;
 		this.piedevas = piedevas;
-		this.piedevas2 = piedevas;
-		this.piedevas3 = piedevas;
+		this.piedevas2 = piedevas2;
+		this.piedevas3 = piedevas3;
 		this.lielums=lielums;
 		this.perVards=perVards;
 		this.Talr=Talr;
 		this.adress=adress;
+		currentLielums = lielums;
 	}
 //	public void Pizza1(String perVards,String Talr,int adress) {
 //		this.perVards=perVards;
@@ -64,14 +68,18 @@ public class Pizza implements Comparable<Pizza>{
 	public String getAdress() {
 		return adress;
 	}
+	public static int getCurrentLielums() {
+        return currentLielums;
+    }
 	public String setPiedevas(String piedevas) {
 		return piedevas;
 	}
-	public int setLielums(int lielums) {
+	public static int setLielums(int lielums) {
+		lielums=+lielums;
 		return lielums;
 	}
 	public String setMerce(String merce) {
-		return merce;
+		 return merce;
 	}
 	public String setperVards(String perVards) {
 		return perVards;
@@ -82,7 +90,7 @@ public class Pizza implements Comparable<Pizza>{
 	public String setAdress(String adress) {
 		return adress;
 	}
-	static void kopums(String fNosaukums){
+	static void kopums(String fNosaukums,String merce,String piedevas,String piedevas2,String Piedevas3,int lielums){
 		try{
 //			File fails = new File("kopums.txt");
 			FileWriter fw= new FileWriter(fNosaukums,false);

@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
@@ -28,9 +29,9 @@ public class pasutit extends JFrame implements ActionListener{
 	JButton Pasutit = new JButton("");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
-	int lielums;
-	Pizza persona=null;
-	  String perVards = null, Talr = null, adress = null,merce = null,piedevas = null,piedevas2 = null,piedevas3 = null;
+	 static int lielums;
+	Pizza persona;
+	  String perVards, Talr, adress,merce,piedevas,piedevas2,piedevas3;
 	pasutit(){
 
 	    frame.setSize(800,800);
@@ -46,7 +47,7 @@ public class pasutit extends JFrame implements ActionListener{
 	    JCheckBox checkbox1 = new JCheckBox("");   
 	    JCheckBox checkbox2 = new JCheckBox("");
 	    JCheckBox checkbox3 = new JCheckBox("");
-	    JCheckBox checkbox4 = new JCheckBox("");
+	    JCheckBox checkbox4 = new JCheckBox("");																														
 	    checkbox1.setBounds(50,210, 270,80); 
 	    checkbox1.addActionListener(this);
 
@@ -83,7 +84,7 @@ public class pasutit extends JFrame implements ActionListener{
 	    frame.add(checkbox1);frame.add(checkbox2);frame.add(checkbox3);frame.add(checkbox4);
 	    checkbox1.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
-	              lielums=20;   
+	        	  lielums=20;    
 	          }    
 	       });  
 	    checkbox2.addItemListener(new ItemListener() {    
@@ -99,6 +100,7 @@ public class pasutit extends JFrame implements ActionListener{
 	    checkbox4.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	              lielums=40;   
+	              
 	          }    
 	       }); 
 	    ietTalak.setBounds(250,650,270,60);
@@ -123,13 +125,28 @@ public class pasutit extends JFrame implements ActionListener{
 			            }
 			        }
 			        if (Uzspiests) {
-			            frame.dispose();
+			        	
+			        	Pizza s = new Pizza(null, null, null, null, null, null, null,lielums);  
+				        s.setLielums(lielums); 
+				     
+				        lielums= Pizza.setLielums(lielums);
+				        
+				        dispose();
+				        //Piedevas piedevas = new Piedevas(lielums);
 			            Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
-			            logi PicaKlatiene = new logi();
+			            Piedevas PiedevasUNmerces = new Piedevas(lielums);
 			        } else {
 			            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas izmēru!");
 			        }
 			    }
        
 	}
+		 public static void main(String args[])  
+		    {  
+			 pasutit PiedevasUNmerces = new pasutit();
+			 int lielums = Pizza.getCurrentLielums();
+//		       Pizza s = new Pizza(null, null, null, null, null, null, null,lielums);  
+//		        s.setLielums(lielums);  
+		        
+		    }  
 }

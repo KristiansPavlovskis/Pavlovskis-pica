@@ -46,6 +46,7 @@ public class logi extends JFrame implements ActionListener{
 	    
 	    frame.add(panel);
 	    frame.setVisible(true);
+	    
 	}	
 		@Override
 
@@ -61,5 +62,11 @@ public class logi extends JFrame implements ActionListener{
 			}
        
 	}
+		public static void main(String[] args) {
+			logi checkbock = new logi();
+			//File fails = new File("kopums.txt");
+		      
+			
+		}
 
 }
