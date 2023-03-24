@@ -22,14 +22,15 @@ public class Pizza implements Comparable<Pizza>{
 	 static String piedevas2;
 	 static String piedevas3;
 	//public static int lielums;
-	 String setMerce;
+	 String setMerce,mikla;
 	// int lielums;
 	int setLielums;
 	static int currentLielums;
 	
 	//perVards,Talr, adress, Talr, Talr, picLielums
-	public Pizza(String perVards,String Talr,String adress, String merce, String piedevas,String piedevas2,String piedevas3,int lielums) {
+	public Pizza(String perVards,String Talr,String adress, String merce, String piedevas,String piedevas2,String piedevas3,String mikla,int lielums) {
 		this.merce = merce;
+		this.mikla=mikla;
 		this.piedevas = piedevas;
 		this.piedevas2 = piedevas2;
 		this.piedevas3 = piedevas3;
@@ -46,6 +47,9 @@ public class Pizza implements Comparable<Pizza>{
 //	}
 	public String getPiedevas() {
 		return piedevas;
+	}
+	public String getMikla() {
+		return mikla;
 	}
 	public String getPiedevas2() {
 		return piedevas2;
@@ -67,6 +71,9 @@ public class Pizza implements Comparable<Pizza>{
 	}
 	public String getAdress() {
 		return adress;
+	}
+	public String setMikla(String mikla) {
+		return mikla;
 	}
 	public static int getCurrentLielums() {
         return currentLielums;
@@ -126,10 +133,10 @@ public class Pizza implements Comparable<Pizza>{
 			}
 	}
 	
-public static void izvadit(String adress,String Talr,String perVards,String merce,String piedevas,int lielums) {
+public static void izvadit(String adress,String Talr,String perVards,String merce,String piedevas,int lielums,String mikla) {
 		
 		 JOptionPane.showMessageDialog(null, "šī pica tiks atvesta drīz uz vārdu: "+perVards+" ar telefona nummuru: "+Talr+" Un adresi: "+adress);
-		 JOptionPane.showMessageDialog(null, "šīs picas mērce ir: "+merce+"\nšīs picas piedevas ir: "+piedevas+" + "+piedevas2+" + "+piedevas2+"\nŠīs picas lielums ir: "+lielums);
+		 JOptionPane.showMessageDialog(null, "Šis picas mīkla ir: "+mikla+"\nšīs picas mērce ir: "+merce+"\nšīs picas piedevas ir: "+piedevas+"\nŠīs picas lielums ir: "+lielums);
 	}
 @Override
 public int compareTo(Pizza o) {

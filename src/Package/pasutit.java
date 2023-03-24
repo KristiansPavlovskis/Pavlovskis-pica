@@ -24,19 +24,19 @@ public class pasutit extends JFrame implements ActionListener{
 	private ButtonGroup checkBoxGroup;
 	JButton next= new JButton("iet maksāt");
 	JFrame frame = new JFrame();
-	JButton ietTalak = new JButton("Iet tālāk");
+	JButton ietTalak = new JButton("Turpināt");
 	JButton Pasutit = new JButton("");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
 	 static int lielums;
 	Pizza persona;
-	  String perVards, Talr, adress,merce,piedevas,piedevas2,piedevas3;
+	  String perVards, Talr, adress,merce,piedevas,piedevas2,piedevas3,mikla;
 	pasutit(){
 		processEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 	    frame.setSize(800,800);
 	    frame.setLocationRelativeTo(null);
 
-	    ImageIcon imageIcon = new ImageIcon(pica.class.getResource("/bildes/picasIzmers.png"));
+	    ImageIcon imageIcon = new ImageIcon(pica.class.getResource("/bildes/PicasIzmers1.png"));
 	    Image image = imageIcon.getImage();
 	    Image scaledImage = image.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
 	    ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
@@ -108,7 +108,7 @@ public class pasutit extends JFrame implements ActionListener{
 	    
 	    frame.add(panel);
 	    frame.setVisible(true);
-		persona = new Pizza(perVards, Talr, adress, merce, piedevas, piedevas2, piedevas3,lielums);
+		persona = new Pizza(perVards, Talr, adress, merce, piedevas, piedevas2, piedevas3,mikla,lielums);
 
 }
 		@Override
@@ -125,10 +125,10 @@ public class pasutit extends JFrame implements ActionListener{
 			        }
 			        if (Uzspiests) {
 			        	
-			        	Pizza s = new Pizza(null, null, null, null, null, null, null,lielums);  
-				        s.setLielums(lielums); 
-				     
-				        lielums= Pizza.setLielums(lielums);
+			        	Pizza s = new Pizza(null, null, null, null, null, null, null,null,lielums);  
+//				        s.setLielums(lielums); 
+//				     
+//				        lielums= Pizza.setLielums(lielums);
 				        
 				        frame.dispose();
 				        //Piedevas piedevas = new Piedevas(lielums);

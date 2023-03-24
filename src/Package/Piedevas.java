@@ -23,13 +23,13 @@ public class Piedevas extends JFrame implements ActionListener{
 	private ButtonGroup checkBoxGroup;
 	JButton next= new JButton("iet maksāt");
 	JFrame frame = new JFrame();
-	JButton ietTalak = new JButton("Iet tālāk");
+	JButton ietTalak = new JButton("Turpināt");
 	JButton Pasutit = new JButton("");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
 	
 	private Pizza persona;
-	 private String perVards, Talr, adress;
+	 private String perVards, Talr, adress,mikla;
 	 String merce;
 	private String piedevas;
 	private String piedevas2;
@@ -173,7 +173,7 @@ public class Piedevas extends JFrame implements ActionListener{
 	    frame.add(panel);
 	    frame.setVisible(true);
 	    
-		persona = new Pizza(perVards, Talr, adress, merce, piedevas, piedevas2, piedevas3,lielums);
+		persona = new Pizza(perVards, Talr, adress, merce, piedevas, piedevas2, piedevas3,mikla,lielums);
 		
 }
 		
@@ -198,10 +198,10 @@ public class Piedevas extends JFrame implements ActionListener{
 			        	
 			            frame.dispose();
 			            
-			            Pizza s = new Pizza(null, null, null, merce, null, null, null,lielums);  
+			            Pizza s = new Pizza(null, null, null, merce, null, null, null,null,lielums);  
 				        s.setMerce(merce);  
 			           // Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
-			            Merces PiedevasUNmerce = new Merces();
+			            Merces PiedevasUNmerce = new Merces(lielums, merce);
 			        } else {
 			            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas mērci!");
 			        }
