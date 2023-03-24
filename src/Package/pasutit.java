@@ -1,14 +1,13 @@
 package Package;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.WindowEvent;
 import java.util.Enumeration;
-import java.util.List;
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
@@ -33,7 +32,7 @@ public class pasutit extends JFrame implements ActionListener{
 	Pizza persona;
 	  String perVards, Talr, adress,merce,piedevas,piedevas2,piedevas3;
 	pasutit(){
-
+		processEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 	    frame.setSize(800,800);
 	    frame.setLocationRelativeTo(null);
 
@@ -131,9 +130,9 @@ public class pasutit extends JFrame implements ActionListener{
 				     
 				        lielums= Pizza.setLielums(lielums);
 				        
-				        dispose();
+				        frame.dispose();
 				        //Piedevas piedevas = new Piedevas(lielums);
-			            Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
+			            //Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
 			            Piedevas PiedevasUNmerces = new Piedevas(lielums);
 			        } else {
 			            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas izmēru!");

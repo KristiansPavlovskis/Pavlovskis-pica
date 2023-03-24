@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.WindowEvent;
 import java.util.Enumeration;
 
 import javax.swing.AbstractButton;
@@ -33,11 +34,11 @@ public class Piedevas extends JFrame implements ActionListener{
 	private String piedevas;
 	private String piedevas2;
 	private String piedevas3;
-	 int lielums;
+	 static int lielums;
 	  
 	Piedevas(int lielums){
 		this.lielums=lielums;
-		
+		processEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 	    frame.setSize(800,800);
 	    frame.setLocationRelativeTo(null);
 
@@ -199,8 +200,8 @@ public class Piedevas extends JFrame implements ActionListener{
 			            
 			            Pizza s = new Pizza(null, null, null, merce, null, null, null,lielums);  
 				        s.setMerce(merce);  
-			            Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
-			            Piedevas PiedevasUNmerces = new Piedevas(lielums);
+			           // Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
+			            Merces PiedevasUNmerce = new Merces();
 			        } else {
 			            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas mērci!");
 			        }
@@ -212,7 +213,7 @@ public class Piedevas extends JFrame implements ActionListener{
 			
 //	       Pizza s = new Pizza(null, null, null, merce, null, null, null,lielums);  
 //	        s.setMerce(merce);  
-	        pasutit PiedevasUNmerces = new pasutit();
+	        Piedevas PiedevasUNmerces = new Piedevas(lielums);
 	    }  
 		
 

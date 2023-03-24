@@ -57,6 +57,7 @@ public class logi extends JFrame implements ActionListener{
 
 		}else if(e.getSource()==Klatiene) {
 			frame.dispose();
+			
 			Klatiene PicaKlatiene = new Klatiene();
 
 			}
