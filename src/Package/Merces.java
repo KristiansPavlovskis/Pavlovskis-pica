@@ -49,19 +49,6 @@ public class Merces extends JFrame implements ActionListener{
 	    JLabel backgroundLabel = new JLabel(scaledImageIcon);
 	    panel.add(backgroundLabel, BorderLayout.CENTER);
 
-//	    Pasutit.setBounds(8,530,270,60);
-//	    Pasutit.addActionListener(this);
-//	    Pasutit.setOpaque(false);
-//	    Pasutit.setContentAreaFilled(false);
-//	    Pasutit.setBorderPainted(false);
-//	     frame.add(Pasutit);
-//	    
-//	    Klatiene.setBounds(430,530,270,60);
-//	    Klatiene.addActionListener(this);
-//	    Klatiene.setOpaque(false);
-//	    Klatiene.setContentAreaFilled(false);
-//	    Klatiene.setBorderPainted(false);
-//	    frame.add(Klatiene);
 	    JCheckBox checkbox1 = new JCheckBox("");   
 	    JCheckBox checkbox2 = new JCheckBox("");
 	    JCheckBox checkbox3 = new JCheckBox("");																													
@@ -137,13 +124,12 @@ public class Merces extends JFrame implements ActionListener{
 		    checkbox11.setBorderPainted(false);
 		    
 		    
-		    
-		    
-		    
-		    
-		    
-		    frame.add(checkbox1);frame.add(checkbox2);frame.add(checkbox3);frame.add(checkbox4);
-		    frame.add(checkbox5);frame.add(checkbox6);frame.add(checkbox7);frame.add(checkbox8);frame.add(checkbox9);frame.add(checkbox10);frame.add(checkbox11);
+		    frame.add(checkbox1);frame.add(checkbox2);
+		    frame.add(checkbox3);frame.add(checkbox4);
+		    frame.add(checkbox5);frame.add(checkbox6);
+		    frame.add(checkbox7);frame.add(checkbox8);
+		    frame.add(checkbox9);frame.add(checkbox10);
+		    frame.add(checkbox11);
 		    checkbox1.addItemListener(new ItemListener() {    
 		          public void itemStateChanged(ItemEvent e) {                 
 		        	  mikla = "Plāna un kraukšķīga";
@@ -175,7 +161,8 @@ public class Merces extends JFrame implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			 if (e.getSource() == ietTalak) {
 			        boolean Uzspiests = false;
-			        for (Enumeration<AbstractButton> buttons = checkBoxGroup.getElements(); buttons.hasMoreElements();) {
+			        for (Enumeration<AbstractButton> buttons = 
+			   checkBoxGroup.getElements(); buttons.hasMoreElements();) {
 			            AbstractButton button = buttons.nextElement();
 			            if (button.isSelected()) {
 			            	Uzspiests = true;
@@ -212,9 +199,9 @@ public class Merces extends JFrame implements ActionListener{
 //				        frame.dispose();
 //				        //Piedevas piedevas = new Piedevas(lielums);
 			            Pizza.izvadit(null, null, null, merce, piedevas,lielums, mikla);
-//			            Piedevas PiedevasUNmerces = new Piedevas(lielums);
+			            PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums,piedevas,mikla);
 			        } else {
-			            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas izmēru!");
+JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas izmēru!");
 			        }
 			    }
        
