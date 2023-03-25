@@ -15,8 +15,8 @@ import javax.swing.JTextArea;
 
 public class Ceptuve extends JFrame implements ActionListener{
 	JFrame frame = new JFrame();
-	JButton Klatiene = new JButton("");
-	JButton Pasutit = new JButton("");
+	JButton Piegade = new JButton("");
+	JButton uzVietas = new JButton("");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
 	 JTextArea lieta;
@@ -50,19 +50,19 @@ public class Ceptuve extends JFrame implements ActionListener{
 	    JLabel backgroundLabel = new JLabel(scaledImageIcon);
 	    panel.add(backgroundLabel, BorderLayout.CENTER);
 
-	    Pasutit.setBounds(26,453,350,80);
-	    Pasutit.addActionListener(this);
-	    Pasutit.setOpaque(false);
-	    Pasutit.setContentAreaFilled(false);
-	    Pasutit.setBorderPainted(false);
-	     frame.add(Pasutit);
+	    uzVietas.setBounds(26,453,350,80);
+	    uzVietas.addActionListener(this);
+	    uzVietas.setOpaque(false);
+	    uzVietas.setContentAreaFilled(false);
+	    uzVietas.setBorderPainted(false);
+	     frame.add(uzVietas);
 	    
-	    Klatiene.setBounds(390,453,365,80);
-	    Klatiene.addActionListener(this);
-	    Klatiene.setOpaque(false);
-	    Klatiene.setContentAreaFilled(false);
-	    Klatiene.setBorderPainted(false);
-	    frame.add(Klatiene);
+	     Piegade.setBounds(390,453,365,80);
+	     Piegade.addActionListener(this);
+	     Piegade.setOpaque(false);
+	     Piegade.setContentAreaFilled(false);
+	     Piegade.setBorderPainted(false);
+	    frame.add(Piegade);
 
         frame.add(label);
 	    frame.add(panel);
@@ -73,15 +73,15 @@ public class Ceptuve extends JFrame implements ActionListener{
 		@Override
 
 		public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==Pasutit) {
+		if(e.getSource()==uzVietas) {
 		frame.dispose();
 		
 		Gaidisana PicaPasutisanas = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards);
 
-		}else if(e.getSource()==Klatiene) {
+		}else if(e.getSource()==Piegade) {
 			frame.dispose();
 
-			Gaidisana PicaPasutisana = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards);
+			Gaidisana1 PicaPasutisana = new Gaidisana1(lielums, merce, mikla, piedevas, adress, Talr, perVards);
 
 			//Klatiene PicaKlatiene = new Klatiene();
 

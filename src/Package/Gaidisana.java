@@ -36,15 +36,7 @@ public class Gaidisana extends JFrame implements ActionListener{
     static String perVards;
 
     Gaidisana(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards){
-    	
-//        this.lielums = lielums;
-//        this.merce = merce;
-//        this.mikla = mikla;
-//        this.piedevas=piedevas;
-//        this.adress = adress;
-//        this.Talr = Talr;
-//        this.perVards = perVards;
-        
+
         frame.setSize(800,800);
         frame.setLocationRelativeTo(null);
 
@@ -78,7 +70,7 @@ public class Gaidisana extends JFrame implements ActionListener{
         frame.add(panel);
         frame.setVisible(true);
 
-        fillProgressBar(); 
+        pildit(); 
     }
 
     @Override
@@ -92,8 +84,8 @@ public class Gaidisana extends JFrame implements ActionListener{
             //Klatiene PicaKlatiene = new Klatiene();
         }
     }
-    private void fillProgressBar() {
-        int reizes = MAX_VERTIBA / 1000; // update progress bar by 1% each time
+    private void pildit() {
+        int reizes = MAX_VERTIBA / 1000;
         final int[] i = {0};
         Timer timer = new Timer(10, new ActionListener() {
             @Override
