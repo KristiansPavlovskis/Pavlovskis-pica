@@ -199,7 +199,7 @@ public class Merces extends JFrame implements ActionListener{
 //				        frame.dispose();
 //				        //Piedevas piedevas = new Piedevas(lielums);
 			            Pizza.izvadit(null, null, null, merce, piedevas,lielums, mikla);
-			            PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums,piedevas,mikla);
+			            PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums,merce,mikla,piedevas);
 			        } else {
 JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas izmēru!");
 			        }
