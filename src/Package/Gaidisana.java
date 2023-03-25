@@ -9,9 +9,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
+import javax.swing.Timer;
 
 public class Gaidisana extends JFrame implements ActionListener{
     JFrame frame = new JFrame();
@@ -34,19 +36,19 @@ public class Gaidisana extends JFrame implements ActionListener{
     static String perVards;
 
     Gaidisana(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards){
-        this.lielums = lielums;
-        this.merce = merce;
-        this.mikla = mikla;
-        this.piedevas=piedevas;
-        this.lielums = lielums;
-        this.merce = merce;
-        this.mikla = mikla;
-        this.piedevas=piedevas;
-
+    	
+//        this.lielums = lielums;
+//        this.merce = merce;
+//        this.mikla = mikla;
+//        this.piedevas=piedevas;
+//        this.adress = adress;
+//        this.Talr = Talr;
+//        this.perVards = perVards;
+        
         frame.setSize(800,800);
         frame.setLocationRelativeTo(null);
 
-        ImageIcon imageIcon = new ImageIcon(pica.class.getResource("/bildes/Piegade.png"));
+        ImageIcon imageIcon = new ImageIcon(pica.class.getResource("/bildes/Gaida.png"));
         Image image = imageIcon.getImage();
         Image scaledImage = image.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
         ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
@@ -70,7 +72,7 @@ public class Gaidisana extends JFrame implements ActionListener{
         jb = new JProgressBar(0, MAX_VERTIBA);
         jb.setValue(0);
         jb.setStringPainted(true);
-        jb.setBounds(200, 200, 200, 200);
+        jb.setBounds(200, 100, 200, 100);
         frame.add(jb);
 
         frame.add(panel);
@@ -82,33 +84,43 @@ public class Gaidisana extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == Pasutit) {
-            frame.dispose();
+            //frame.dispose();
             //Gaidisana PicaPasutisana = new Gaidisana();
         } else if (e.getSource() == Klatiene) {
-            frame.dispose();
+         //   frame.dispose();
             //Gaidisana PicaPasutisana = new Gaidisana();
             //Klatiene PicaKlatiene = new Klatiene();
         }
     }
     private void fillProgressBar() {
         int reizes = MAX_VERTIBA / 1000; // update progress bar by 1% each time
-        for (int i = 0; i <= MAX_VERTIBA; i += reizes) {
-            jb.setValue(i);
-            try {
-                if (i > 666 && i<1332) {
-                    jb.setString("Tika ielikta cepenē");
-                } else if (i > 1333) {
-                    jb.setString("Piegāde ir ceļā");
-                } else if (i < 665) {
-                    jb.setString("Tiek taisīta pica");
+        final int[] i = {0};
+        Timer timer = new Timer(10, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if (i[0] > 666 && i[0] < 1332) {
+                        jb.setString("Tika ielikta cepenē");
+                    } else if (i[0] > 1333) {
+                        jb.setString("Piegāde ir ceļā");
+                    } else if (i[0] < 665) {
+                        jb.setString("Tiek taisīta pica");
+                    }
+                    jb.setValue(i[0]);
+                    jb.setBounds((int) (i[0] / 3.5), 100, 200, 100);
+                    i[0] += reizes;
+                    if (i[0] >= MAX_VERTIBA) {
+                        ((Timer) e.getSource()).stop();
+                        frame.setVisible(false);
+                        //logi checkbock = new logi();
+                        jb.setValue(MAX_VERTIBA);
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
-                jb.setBounds((int) (i/3.4), 200, 200, 200);
-                Thread.sleep(10); // wait for 10 milliseconds before updating again
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
-        }
-        jb.setValue(MAX_VERTIBA); 
+        });
+        timer.start();
     }
     
 

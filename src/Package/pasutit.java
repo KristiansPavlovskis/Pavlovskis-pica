@@ -143,7 +143,7 @@ public class pasutit extends JFrame implements ActionListener{
 		 public static void main(String args[])  
 		    {  
 			 pasutit PiedevasUNmerces = new pasutit();
-			 int lielums = Pizza.getCurrentLielums();
+//			 int lielums = Pizza.getCurrentLielums();
 //		       Pizza s = new Pizza(null, null, null, null, null, null, null,lielums);  
 //		        s.setLielums(lielums);  
 		        

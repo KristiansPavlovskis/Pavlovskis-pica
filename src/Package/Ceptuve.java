@@ -68,13 +68,15 @@ public class Ceptuve extends JFrame implements ActionListener{
 	    frame.add(panel);
 	    frame.setVisible(true);
 	    
+	    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}	
 		@Override
 
 		public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==Pasutit) {
 		frame.dispose();
-		Gaidisana PicaPasutisana = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards);
+		
+		Gaidisana PicaPasutisanas = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards);
 
 		}else if(e.getSource()==Klatiene) {
 			frame.dispose();

@@ -198,6 +198,8 @@ public class Merces extends JFrame implements ActionListener{
 //				        
 //				        frame.dispose();
 //				        //Piedevas piedevas = new Piedevas(lielums);
+			        	    frame.setVisible(false);
+
 			            Pizza.izvadit(null, null, null, merce, piedevas,lielums, mikla);
 			            PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums,merce,mikla,piedevas);
 			        } else {
