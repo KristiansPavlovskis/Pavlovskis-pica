@@ -102,7 +102,7 @@ public class Gaidisana1 extends JFrame implements ActionListener{
                     if (i[0] >= MAX_VERTIBA) {
                         ((Timer) e.getSource()).stop();
                         frame.setVisible(false);
-                        //logi checkbock = new logi();
+                       // check checkbock = new check();
                         jb.setValue(MAX_VERTIBA);
                     }
                 } catch (Exception ex) {
