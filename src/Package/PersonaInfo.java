@@ -36,7 +36,8 @@ public class PersonaInfo extends JFrame implements ActionListener{
         frame.setSize(800, 800);
         frame.setLocationRelativeTo(null);
 
-        ImageIcon imageIcon = new ImageIcon(pica.class.getResource("/bildes/PersonasInfo.png"));
+        ImageIcon imageIcon = new ImageIcon(
+        		pica.class.getResource("/bildes/PersonasInfo.png"));
         Image image = imageIcon.getImage();
         Image scaledImage = image.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
         ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
