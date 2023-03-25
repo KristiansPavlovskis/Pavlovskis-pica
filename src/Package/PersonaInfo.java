@@ -27,8 +27,11 @@ public class PersonaInfo extends JFrame implements ActionListener{
     static String piedevas;
 
     static String mikla;
-    String adress, Talr, perVards;
+    static String adress;
+	static String Talr;
+	static String perVards;
     PersonaInfo(int lielums, String merce, String mikla, String piedevas) {
+    	
         this.lielums = lielums;
         this.merce = merce;
         this.mikla = mikla;
@@ -97,7 +100,7 @@ public class PersonaInfo extends JFrame implements ActionListener{
             Talr= tal.getText();
             perVards= vard.getText();
             Pizza.izvadit(adress, Talr, perVards, merce, piedevas,lielums, mikla);
-            pasutit PicaPasutisana = new pasutit();
+            Ceptuve PicaPasutisana = new Ceptuve(lielums, merce,mikla,piedevas, adress,Talr,perVards);
 
         } else if(e.getSource() == tal) {
             String talNumber = tal.getText().replaceAll("\\s+","");
