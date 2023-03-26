@@ -33,11 +33,15 @@ public class Merces extends JFrame implements ActionListener{
 	JCheckBox checkbox9 = new JCheckBox();
 	JCheckBox checkbox10 = new JCheckBox();
 	JCheckBox checkbox11 = new JCheckBox();
-	static String mikla,merce,piedevas;
-	static int lielums;
-	Merces(int lielums, String merce){
+	private String mikla,merce,piedevas="";
+	private int lielums;
+	private double cena,cena1;
+	Merces(int lielums, String merce, double cena){
 		this.lielums=lielums;
 		this.merce=merce;
+		this.cena=cena;
+		cena1=cena1+cena;
+//		Pizza.izvadit( adress, Talr, perVards, merce, piedevas, lielums, mikla);
 		checkBoxGroup = new ButtonGroup();
 	    frame.setSize(700,950);
 	    frame.setLocationRelativeTo(null);
@@ -133,16 +137,19 @@ public class Merces extends JFrame implements ActionListener{
 		    checkbox1.addItemListener(new ItemListener() {    
 		          public void itemStateChanged(ItemEvent e) {                 
 		        	  mikla = "Plāna un kraukšķīga";
+		        	  cena1=1;
 		          }    
 		       });  
 		    checkbox2.addItemListener(new ItemListener() {    
 		          public void itemStateChanged(ItemEvent e) {                 
 		        	  mikla ="Bieza";
+		        	  cena1=1.25;
 		          }    
 		       });
 		    checkbox3.addItemListener(new ItemListener() {    
 		          public void itemStateChanged(ItemEvent e) {                 
 		        	  mikla ="Bez glutēna";
+		        	  cena1=2;
 		          }    
 		       });	  
 		   
@@ -172,44 +179,53 @@ public class Merces extends JFrame implements ActionListener{
 			        if (Uzspiests) {
 			        	if (checkbox4.isSelected()) {
 			        		piedevas += "Mozzarella siers, ";
+			        		cena1=2;
+			        		cena=cena+cena1;
 			        		}
 			        		if (checkbox5.isSelected()) {
 			        		piedevas += "Parmasan siers, ";
+			        		cena1=1;
+			        		cena=cena+cena1;
 			        		}if (checkbox6.isSelected()) {
 			        			piedevas += "Sēnes, ";
+			        			cena1=0.75;
+			        			cena=cena+cena1;
 			        		}
 			        		if (checkbox7.isSelected()) {
 			        		piedevas += "Tomāti, ";
+			        		cena1=1;
+			        		cena=cena+cena1;
 			        		}if (checkbox8.isSelected()) {
 			        			piedevas += "Sīpoli, ";
+			        			cena1=0.75;
+			        			cena=cena+cena1;
 			        		}
 			        		if (checkbox9.isSelected()) {
 			        		piedevas += "Ananāsi, ";
+			        		cena1=1.25;
+			        		cena=cena+cena1;
 			        		}if (checkbox10.isSelected()) {
 			        			piedevas += "Pepperoni, ";
+			        			cena1=2;
+			        			cena=cena+cena1;
 			        		}
 			        		if (checkbox11.isSelected()) {
 			        		 piedevas += "Paprika, ";
+			        		 cena1=0.5;
+			        		 cena=cena+cena1;
 			        		}
-//			        	Pizza s = new Pizza(null, null, null, null, null, null, null,lielums);  
-//				        s.setLielums(lielums); 
-//				     
-//				        lielums= Pizza.setLielums(lielums);
-//				        
-//				        frame.dispose();
-//				        //Piedevas piedevas = new Piedevas(lielums);
-			        	    frame.setVisible(false);
 
-			            Pizza.izvadit(null, null, null, merce, piedevas,lielums, mikla);
-			            PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums,merce,mikla,piedevas);
+			        	    frame.setVisible(false);
+			        	    cena=cena+cena1;
+			            PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums,merce,mikla,piedevas,cena);
 			        } else {
-JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas izmēru!");
+JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas mīklu!");
 			        }
 			    }
        
 	}
 		public static void main(String[] args) {
-			Merces checkbock123 = new Merces(lielums, merce);
+			//Merces checkbock123 = new Merces(lielums, merce,cena);
 			//File fails = new File("kopums.txt");
 		      
 			

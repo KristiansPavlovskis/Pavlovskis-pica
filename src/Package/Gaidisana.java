@@ -25,21 +25,26 @@ public class Gaidisana extends JFrame implements ActionListener{
     JProgressBar jb;
     int i=0,num=0;
     static int MAX_VERTIBA = 2000;
-    static int lielums;
-    static String merce;
+    private int lielums,maksa=0;
+    private double cena;
 
-    static String piedevas;
+    private String merce,piedevas,mikla,adress,Talr,perVards;
 
-    static String mikla;
-    static String adress;
-    static String Talr;
-    static String perVards;
-
-    Gaidisana(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards){
+    
+    Gaidisana(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards, double cena){
+    	this.lielums = lielums;
+        this.merce = merce;
+        this.mikla = mikla;
+        this.piedevas=piedevas;
+        this.lielums = lielums;
+        this.merce = merce;
+        this.mikla = mikla;
+        this.piedevas=piedevas;
+        this.cena=cena;
+		
 
         frame.setSize(800,800);
         frame.setLocationRelativeTo(null);
-
         ImageIcon imageIcon = new ImageIcon(pica.class.getResource("/bildes/Gaida.png"));
         Image image = imageIcon.getImage();
         Image scaledImage = image.getScaledInstance(800, 800, Image.SCALE_SMOOTH);
@@ -104,7 +109,8 @@ public class Gaidisana extends JFrame implements ActionListener{
                     if (i[0] >= MAX_VERTIBA) {
                         ((Timer) e.getSource()).stop();
                         frame.setVisible(false);
-                        //logi checkbock = new logi();
+                        maksa=0;
+                        check checkbock = new check(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena,maksa);
                         jb.setValue(MAX_VERTIBA);
                     }
                 } catch (Exception ex) {
@@ -121,7 +127,7 @@ public class Gaidisana extends JFrame implements ActionListener{
 
 
     public static void main(String[] args) {
-        Gaidisana checkbock = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards);
+      //  Gaidisana checkbock = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena);
         //File fails = new File("kopums.txt");
         
     }

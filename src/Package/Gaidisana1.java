@@ -25,17 +25,21 @@ public class Gaidisana1 extends JFrame implements ActionListener{
     JProgressBar jb;
     int i=0,num=0;
     static int MAX_VERTIBA = 2000;
-    static int lielums;
-    static String merce;
+    private int lielums,maksa;
+	 private double cena;
+	Pizza persona;
+	  String perVards, Talr, adress,merce,piedevas,piedevas2,piedevas3,mikla;
+    Gaidisana1(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards, double cena){
 
-    static String piedevas;
-
-    static String mikla;
-    static String adress;
-    static String Talr;
-    static String perVards;
-
-    Gaidisana1(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards){
+this.lielums = lielums;
+this.merce = merce;
+this.mikla = mikla;
+this.piedevas=piedevas;
+this.lielums = lielums;
+this.merce = merce;
+this.mikla = mikla;
+this.piedevas=piedevas;
+this.cena=cena;
 
         frame.setSize(800,800);
         frame.setLocationRelativeTo(null);
@@ -75,14 +79,7 @@ public class Gaidisana1 extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == Pasutit) {
-            //frame.dispose();
-            //Gaidisana PicaPasutisana = new Gaidisana();
-        } else if (e.getSource() == Klatiene) {
-         //   frame.dispose();
-            //Gaidisana PicaPasutisana = new Gaidisana();
-            //Klatiene PicaKlatiene = new Klatiene();
-        }
+        
     }
     private void pildit() {
         int reizes = MAX_VERTIBA / 1000;
@@ -102,7 +99,8 @@ public class Gaidisana1 extends JFrame implements ActionListener{
                     if (i[0] >= MAX_VERTIBA) {
                         ((Timer) e.getSource()).stop();
                         frame.setVisible(false);
-                       // check checkbock = new check();
+                        maksa=3;
+                        check checkbock = new check(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena,maksa);
                         jb.setValue(MAX_VERTIBA);
                     }
                 } catch (Exception ex) {
@@ -119,7 +117,7 @@ public class Gaidisana1 extends JFrame implements ActionListener{
 
 
     public static void main(String[] args) {
-        Gaidisana1 checkbock = new Gaidisana1(lielums, merce, mikla, piedevas, adress, Talr, perVards);
+      // Gaidisana1 checkbock = new Gaidisana1(lielums, merce, mikla, piedevas, adress, Talr, perVards);
         //File fails = new File("kopums.txt");
         
     }

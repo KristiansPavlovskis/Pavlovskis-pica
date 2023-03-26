@@ -34,10 +34,13 @@ public class Piedevas extends JFrame implements ActionListener{
 	private String piedevas;
 	private String piedevas2;
 	private String piedevas3;
-	 static int lielums;
+	 private  int lielums;
+	private  double cena,cena1;
 	  
-	Piedevas(int lielums){
+	Piedevas(int lielums,double cena){
 		this.lielums=lielums;
+		this.cena=cena;
+		 cena1=cena1+cena;
 		processEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 	    frame.setSize(800,800);
 	    frame.setLocationRelativeTo(null);
@@ -124,46 +127,55 @@ public class Piedevas extends JFrame implements ActionListener{
 	    checkbox1.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	              persona.setMerce="Majonēze ar papriku";   
+	              cena1=0.80;
 	          }    
 	       });  
 	    checkbox2.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	        	  merce="Karija majonēze";
+	        	  cena1=0.80;
 	          }    
 	       });
 	    checkbox3.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	        	  merce="Saldskābā mērce";   
+	        	  cena1=0.80;
 	          }    
 	       });
 	    checkbox4.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	        	  merce="Majonēze ar gurķiem";  
+	        	  cena1=0.80;
 	          }    
 	       }); 
 	    checkbox5.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	              merce="Ķiploku majonēze";   
+	              cena1=0.80;
 	          }    
 	       });  
 	    checkbox6.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	        	  merce="Kečups";
+	        	  cena1=0.40;
 	          }    
 	       });
 	    checkbox7.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	        	  merce="Čili majonēze";   
+	        	  cena1=0.80;
 	          }    
 	       });
 	    checkbox8.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	        	  merce="Barbekjū mērce";  
+	        	  cena1=0.80;
 	          }    
 	       }); 
 	    checkbox9.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	        	  merce="Vieglā mājas salātu mērce";  
+	        	  cena1=0.80;
 	          }    
 	       }); 
 	    ietTalak.setBounds(250,100,250,30);
@@ -172,8 +184,9 @@ public class Piedevas extends JFrame implements ActionListener{
 	    
 	    frame.add(panel);
 	    frame.setVisible(true);
-	    
-		persona = new Pizza(perVards, Talr, adress, merce, piedevas, piedevas2, piedevas3,mikla,lielums);
+	   // cena=cena+cena1;
+		//
+	    persona = new Pizza(perVards, Talr, adress, merce, piedevas,mikla,lielums,cena);
 		
 }
 		
@@ -195,13 +208,14 @@ public class Piedevas extends JFrame implements ActionListener{
 			            }
 			        }
 			        if (Uzspiests) {
-			        	
-			            frame.dispose();
+			        	cena=cena+cena1;
 			            
-			            Pizza s = new Pizza(null, null, null, merce, null, null, null,null,lielums);  
-				        s.setMerce(merce);  
+			        	frame.dispose();
+			            
+			        	persona = new Pizza(perVards, Talr, adress, merce, piedevas,mikla,lielums,cena);  
+				        persona.setMerce(merce);  
 			           // Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
-			            Merces PiedevasUNmerce = new Merces(lielums, merce);
+			            Merces PiedevasUNmerce = new Merces(lielums, merce,cena);
 			        } else {
 			            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas mērci!");
 			        }
@@ -213,7 +227,7 @@ public class Piedevas extends JFrame implements ActionListener{
 			
 //	       Pizza s = new Pizza(null, null, null, merce, null, null, null,lielums);  
 //	        s.setMerce(merce);  
-	        Piedevas PiedevasUNmerces = new Piedevas(lielums);
+	        //Piedevas PiedevasUNmerces = new Piedevas(lielums,cena);
 	    }  
 		
 

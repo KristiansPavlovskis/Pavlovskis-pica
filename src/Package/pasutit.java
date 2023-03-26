@@ -28,7 +28,8 @@ public class pasutit extends JFrame implements ActionListener{
 	JButton Pasutit = new JButton("");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
-	 static int lielums;
+	 private int lielums;
+	 private double cena;
 	Pizza persona;
 	  String perVards, Talr, adress,merce,piedevas,piedevas2,piedevas3,mikla;
 	pasutit(){
@@ -84,22 +85,25 @@ public class pasutit extends JFrame implements ActionListener{
 	    checkbox1.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	        	  lielums=20;    
+	        	  cena=6.50;
 	          }    
 	       });  
 	    checkbox2.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
-	              lielums=30;   
+	              lielums=30; 
+	              cena=12;
 	          }    
 	       });
 	    checkbox3.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
-	              lielums=25;   
+	              lielums=25;
+	              cena=9.30;
 	          }    
 	       });
 	    checkbox4.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
 	              lielums=40;   
-	              
+	              cena=18.50;
 	          }    
 	       }); 
 	    ietTalak.setBounds(250,650,270,60);
@@ -108,38 +112,30 @@ public class pasutit extends JFrame implements ActionListener{
 	    
 	    frame.add(panel);
 	    frame.setVisible(true);
-		persona = new Pizza(perVards, Talr, adress, merce, piedevas, piedevas2, piedevas3,mikla,lielums);
+		persona = new Pizza(perVards, Talr, adress, merce, piedevas,mikla,lielums,cena);
 
 }
 		@Override
-
 		public void actionPerformed(ActionEvent e) {
-			 if (e.getSource() == ietTalak) {
-			        boolean Uzspiests = false;
-			        for (Enumeration<AbstractButton> buttons = checkBoxGroup.getElements(); buttons.hasMoreElements();) {
-			            AbstractButton button = buttons.nextElement();
-			            if (button.isSelected()) {
-			            	Uzspiests = true;
-			                break;
-			            }
-			        }
-			        if (Uzspiests) {
-			        	
-			        	Pizza s = new Pizza(null, null, null, null, null, null, null,null,lielums);  
-//				        s.setLielums(lielums); 
-//				     
-//				        lielums= Pizza.setLielums(lielums);
-				        
-				        frame.dispose();
-				        //Piedevas piedevas = new Piedevas(lielums);
-			            //Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
-			            Piedevas PiedevasUNmerces = new Piedevas(lielums);
-			        } else {
-			            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas izmēru!");
-			        }
-			    }
-       
-	}
+		    if (e.getSource() == ietTalak) {
+		        boolean Uzspiests = false;
+		        for (Enumeration<AbstractButton> buttons = checkBoxGroup.getElements(); buttons.hasMoreElements();) {
+		            AbstractButton button = buttons.nextElement();
+		            if (button.isSelected()) {
+		                Uzspiests = true;
+		                break;
+		            }
+		        }
+		        if (Uzspiests) {
+		            frame.dispose();
+		            persona = new Pizza(perVards, Talr, adress, merce, piedevas, mikla, lielums, cena);
+		            Piedevas PiedevasUNmerces = new Piedevas(lielums, cena);
+		
+		        } else {
+		            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas izmēru!");
+		        }
+		    }
+		}
 		 public static void main(String args[])  
 		    {  
 			 pasutit PiedevasUNmerces = new pasutit();

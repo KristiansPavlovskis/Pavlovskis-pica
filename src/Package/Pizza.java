@@ -13,32 +13,28 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 public class Pizza implements Comparable<Pizza>{
+	//Atribūti
 	 int lielums;
 	 String merce;
 	 String perVards;
 	 String Talr;
 	 String adress;
-	String  piedevas;
-	 static String piedevas2;
-	 static String piedevas3;
-	//public static int lielums;
+	 String  piedevas;
+	 double cena;
 	 String setMerce,mikla;
-	// int lielums;
 	int setLielums;
 	static int currentLielums;
 	
-	//perVards,Talr, adress, Talr, Talr, picLielums
-	public Pizza(String perVards,String Talr,String adress, String merce, String piedevas,String piedevas2,String piedevas3,String mikla,int lielums) {
-		this.merce = merce;
-		this.mikla=mikla;
-		this.piedevas = piedevas;
-		this.piedevas2 = piedevas2;
-		this.piedevas3 = piedevas3;
-		this.lielums=lielums;
-		this.perVards=perVards;
-		this.Talr=Talr;
-		this.adress=adress;
-		currentLielums = lielums;
+	//Konstruktors
+	public Pizza(String perVards, String Talr, String adress, String merce, String piedevas, String mikla, int lielums, double cena) {
+	    this.perVards = perVards;
+	    this.Talr = Talr;
+	    this.adress = adress;
+	    this.merce = merce;
+	    this.piedevas = piedevas;
+	    this.mikla = mikla;
+	    this.lielums = lielums;
+	    this.cena = cena;
 	}
 //	public void Pizza1(String perVards,String Talr,int adress) {
 //		this.perVards=perVards;
@@ -48,14 +44,11 @@ public class Pizza implements Comparable<Pizza>{
 	public String getPiedevas() {
 		return piedevas;
 	}
+	public double getCena() {
+		return cena;
+	}
 	public String getMikla() {
 		return mikla;
-	}
-	public String getPiedevas2() {
-		return piedevas2;
-	}
-	public String getPiedevas3() {
-		return piedevas3;
 	}
 	public int getLielums() {
 		return lielums;
@@ -78,6 +71,9 @@ public class Pizza implements Comparable<Pizza>{
 	public static int getCurrentLielums() {
         return currentLielums;
     }
+	public double setCena(double cena) {
+		return cena;
+	}
 	public String setPiedevas(String piedevas) {
 		return piedevas;
 	}
@@ -143,42 +139,6 @@ public int compareTo(Pizza o) {
 	// TODO Auto-generated method stub
 	return 0;
 }
-public static void fill() {
-	JFrame f;
-    JProgressBar b;
-     
-     f = new JFrame("Picērija");
-      JPanel p = new JPanel();
-      b = new JProgressBar();
-      b.setValue(0);
-      b.setStringPainted(true);
-      p.add(b);
-      f.add(p);
-      f.setSize(200, 200);
-      f.setVisible(true);
-        int i = 0;
-        try {
-            while (i <= 100) {
-                // set text according to the level to which the bar is filled
-                if (i > 30 && i < 70)
-                    b.setString("Tika ielikta cepenē");
-                else if (i > 70)
-                    b.setString("Piegāde ir ceļā");
-                else
-                    b.setString("Tiek taisīta pica");
- 
-                // fill the menu bar
-                b.setValue(i + 10);
- 
-                // delay the thread
-                Thread.sleep(3000);
-                i += 20;
-            }
-            f.setVisible(false);
-        }
-        catch (Exception e) {
-        }
-    }
 
 
 	

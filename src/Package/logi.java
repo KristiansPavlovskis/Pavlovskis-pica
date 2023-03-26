@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class logi extends JFrame implements ActionListener{
 	JFrame frame = new JFrame();
-	JButton Klatiene = new JButton("");
+	JButton Klatiene = new JButton("a");
 	JButton Pasutit = new JButton("");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
@@ -35,7 +35,7 @@ public class logi extends JFrame implements ActionListener{
 	    Pasutit.setOpaque(false);
 	    Pasutit.setContentAreaFilled(false);
 	    Pasutit.setBorderPainted(false);
-	     frame.add(Pasutit);
+	    frame.add(Pasutit);
 	    
 	    Klatiene.setBounds(430,530,270,60);
 	    Klatiene.addActionListener(this);

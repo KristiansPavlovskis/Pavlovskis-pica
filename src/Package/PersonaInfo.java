@@ -21,21 +21,19 @@ public class PersonaInfo extends JFrame implements ActionListener{
     JPanel panel = new JPanel();
     JTextArea adr, vard, tal;
 
-    static int lielums;
-    static String merce;
+    private int lielums;
+    private String merce,piedevas,mikla,adress,Talr,perVards;
 
-    static String piedevas;
-
-    static String mikla;
-    static String adress;
-	static String Talr;
-	static String perVards;
-    PersonaInfo(int lielums, String merce, String mikla, String piedevas) {
+    
+	static double cena,cena1;
+    PersonaInfo(int lielums, String merce, String mikla, String piedevas, double cena) {
     	
         this.lielums = lielums;
         this.merce = merce;
         this.mikla = mikla;
         this.piedevas=piedevas;
+        this.cena=cena;
+      
         frame.setSize(800, 800);
         frame.setLocationRelativeTo(null);
 
@@ -99,8 +97,8 @@ public class PersonaInfo extends JFrame implements ActionListener{
             adress= adr.getText();
             Talr= tal.getText();
             perVards= vard.getText();
-            Pizza.izvadit(adress, Talr, perVards, merce, piedevas,lielums, mikla);
-            Ceptuve PicaPasutisana = new Ceptuve(lielums, merce,mikla,piedevas, adress,Talr,perVards);
+            //Pizza.izvadit(adress, Talr, perVards, merce, piedevas,lielums, mikla);
+            Ceptuve PicaPasutisana = new Ceptuve(lielums, merce,mikla,piedevas, adress,Talr,perVards,cena);
 
         } else if(e.getSource() == tal) {
             String talNumber = tal.getText().replaceAll("\\s+","");
@@ -112,6 +110,6 @@ public class PersonaInfo extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
-        PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums, mikla, piedevas, merce);
+        //PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums, mikla, piedevas, merce,cena);
     }
 }

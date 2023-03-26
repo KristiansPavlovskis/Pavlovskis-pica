@@ -20,16 +20,11 @@ public class Ceptuve extends JFrame implements ActionListener{
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
 	 JTextArea lieta;
-	 static int lielums;
-	    static String merce;
+	 private int lielums;
+	    private String merce,piedevas,mikla,adress,Talr,perVards;
 
-	    static String piedevas;
-
-	    static String mikla;
-	    static String adress;
-		static String Talr;
-		static String perVards;
-	Ceptuve(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards){
+		static double cena,cena1;
+	Ceptuve(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards, double cena){
 		 this.lielums = lielums;
 	        this.merce = merce;
 	        this.mikla = mikla;
@@ -38,6 +33,7 @@ public class Ceptuve extends JFrame implements ActionListener{
 	        this.merce = merce;
 	        this.mikla = mikla;
 	        this.piedevas=piedevas;
+	        this.cena=cena;
 
 		
 	    frame.setSize(800,800);
@@ -73,15 +69,15 @@ public class Ceptuve extends JFrame implements ActionListener{
 		@Override
 
 		public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==uzVietas) {
+		if(e.getSource()==Piegade) {
 		frame.dispose();
-		
-		Gaidisana PicaPasutisanas = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards);
+		cena=cena+3;
+		Gaidisana PicaPasutisanas = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena);
 
-		}else if(e.getSource()==Piegade) {
+		}else if(e.getSource()==uzVietas) {
 			frame.dispose();
 
-			Gaidisana1 PicaPasutisana = new Gaidisana1(lielums, merce, mikla, piedevas, adress, Talr, perVards);
+			Gaidisana1 PicaPasutisana = new Gaidisana1(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena);
 
 			//Klatiene PicaKlatiene = new Klatiene();
 
@@ -89,7 +85,7 @@ public class Ceptuve extends JFrame implements ActionListener{
        
 	}
 		public static void main(String[] args) {
-			Ceptuve checkbock = new Ceptuve(lielums, merce, mikla, piedevas, adress, Talr, perVards);
+			//Ceptuve checkbock = new Ceptuve(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena);
 			//File fails = new File("kopums.txt");
 		      
 			
