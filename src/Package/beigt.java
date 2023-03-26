@@ -14,8 +14,8 @@ import javax.swing.JPanel;
 
 public class beigt extends JFrame implements ActionListener{
 	JFrame frame = new JFrame();
-	JButton Klatiene = new JButton("a");
-	JButton Pasutit = new JButton("");
+	JButton beigt = new JButton("");
+	JButton Turpinat = new JButton("");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
 	beigt(){
@@ -30,19 +30,19 @@ public class beigt extends JFrame implements ActionListener{
 	    JLabel backgroundLabel = new JLabel(scaledImageIcon);
 	    panel.add(backgroundLabel, BorderLayout.CENTER);
 
-	    Pasutit.setBounds(8,530,270,60);
-	    Pasutit.addActionListener(this);
-	    Pasutit.setOpaque(false);
-	    Pasutit.setContentAreaFilled(false);
-	    Pasutit.setBorderPainted(false);
-	    frame.add(Pasutit);
+	    Turpinat.setBounds(70,670,230,80);
+	    Turpinat.addActionListener(this);
+	    Turpinat.setOpaque(false);
+	    Turpinat.setContentAreaFilled(false);
+	    Turpinat.setBorderPainted(false);
+	    frame.add(Turpinat);
 	    
-	    Klatiene.setBounds(430,530,270,60);
-	    Klatiene.addActionListener(this);
-	    Klatiene.setOpaque(false);
-	    Klatiene.setContentAreaFilled(false);
-	    Klatiene.setBorderPainted(false);
-	    frame.add(Klatiene);
+	    beigt.setBounds(480,670,230,70);
+	    beigt.addActionListener(this);
+	    beigt.setOpaque(false);
+	    beigt.setContentAreaFilled(false);
+	    beigt.setBorderPainted(false);
+	    frame.add(beigt);
 	    
 	    frame.add(panel);
 	    frame.setVisible(true);
@@ -51,14 +51,13 @@ public class beigt extends JFrame implements ActionListener{
 		@Override
 
 		public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==Pasutit) {
+		if(e.getSource()==Turpinat) {
 		frame.dispose();
-		pasutit PicaPasutisana = new pasutit();
+		logi PicaPasutisana = new logi();
 
-		}else if(e.getSource()==Klatiene) {
+		}else if(e.getSource()==beigt) {
 			frame.dispose();
 			
-			Klatiene PicaKlatiene = new Klatiene();
 
 			}
        
