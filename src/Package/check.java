@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 public class check extends JFrame implements ActionListener{
 	JFrame frame = new JFrame();
 	JButton Klatiene = new JButton("");
-	JButton Pasutit = new JButton("");
+	JButton Pasutit = new JButton("Samaksāt--->");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
 	JLabel area1, area2, area3,area4, area5, area6,area7,linija,ietaupijumi;
@@ -87,6 +87,14 @@ public class check extends JFrame implements ActionListener{
         ietaupijumi.setBounds(50, 605, 520, 70);
        // area3.setOpaque(false);
        // area3.setFont(new Font("Arial", Font.BOLD, 30));
+        Pasutit.setBounds(90,680,200,60);
+	    Pasutit.addActionListener(this);
+	    Pasutit.setOpaque(false);
+	    Pasutit.setContentAreaFilled(false);
+	    Pasutit.setBorderPainted(false);
+	    
+	    
+	    frame.add(Pasutit);
         frame.add(ietaupijumi);
         frame.add(linija);
         frame.add(area1);
@@ -108,14 +116,9 @@ public class check extends JFrame implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==Pasutit) {
 		frame.dispose();
-		pasutit PicaPasutisana = new pasutit();
+		beigt PicaPasutisana = new beigt();
 
-		}else if(e.getSource()==Klatiene) {
-			frame.dispose();
-			
-			Klatiene PicaKlatiene = new Klatiene();
-
-			}
+		}
        
 	}
 		public static void main(String[] args) {

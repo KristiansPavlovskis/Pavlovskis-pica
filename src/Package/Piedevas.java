@@ -126,7 +126,7 @@ public class Piedevas extends JFrame implements ActionListener{
 	    frame.add(checkbox5);frame.add(checkbox6);frame.add(checkbox7);frame.add(checkbox8);frame.add(checkbox9);
 	    checkbox1.addItemListener(new ItemListener() {    
 	          public void itemStateChanged(ItemEvent e) {                 
-	              persona.setMerce="Majonēze ar papriku";   
+	              merce="Majonēze ar papriku";   
 	              cena1=0.80;
 	          }    
 	       });  

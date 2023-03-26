@@ -56,6 +56,7 @@ public class Pizza implements Comparable<Pizza>{
 	public String getMerce() {
 		return merce;
 	}
+	
 	public String getperVards() {
 		return perVards;
 	}
