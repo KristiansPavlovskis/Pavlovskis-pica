@@ -97,7 +97,6 @@ public class PersonaInfo extends JFrame implements ActionListener{
             adress= adr.getText();
             Talr= tal.getText();
             perVards= vard.getText();
-            //Pizza.izvadit(adress, Talr, perVards, merce, piedevas,lielums, mikla);
             Ceptuve PicaPasutisana = new Ceptuve(lielums, merce,mikla,piedevas, adress,Talr,perVards,cena);
 
         } else if(e.getSource() == tal) {
@@ -109,7 +108,5 @@ public class PersonaInfo extends JFrame implements ActionListener{
         }
     }
 
-    public static void main(String[] args) {
-        //PersonaInfo PiedevasUNmerces = new PersonaInfo(lielums, mikla, piedevas, merce,cena);
-    }
+   
 }

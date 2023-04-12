@@ -1,16 +1,12 @@
 package Package;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
 
 public class Pizza implements Comparable<Pizza>{
 	//Atribūti
@@ -36,11 +32,7 @@ public class Pizza implements Comparable<Pizza>{
 	    this.lielums = lielums;
 	    this.cena = cena;
 	}
-//	public void Pizza1(String perVards,String Talr,int adress) {
-//		this.perVards=perVards;
-//		this.Talr=Talr;
-//		this.adress=adress;
-//	}
+	//Metodes
 	public String getPiedevas() {
 		return piedevas;
 	}
@@ -66,42 +58,42 @@ public class Pizza implements Comparable<Pizza>{
 	public String getAdress() {
 		return adress;
 	}
-	public String setMikla(String mikla) {
-		return mikla;
-	}
-	public static int getCurrentLielums() {
-        return currentLielums;
-    }
-	public double setCena(double cena) {
-		return cena;
-	}
-	public String setPiedevas(String piedevas) {
-		return piedevas;
-	}
-	public static int setLielums(int lielums) {
-		lielums=+lielums;
-		return lielums;
-	}
-	public String setMerce(String merce) {
-		 return merce;
-	}
-	public String setperVards(String perVards) {
-		return perVards;
-	}
-	public String setTalr(String Talr) {
-		return Talr;
-	}
-	public String setAdress(String adress) {
-		return adress;
-	}
-	static void kopums(String fNosaukums,String merce,String piedevas,String piedevas2,String Piedevas3,int lielums){
+//	public String setMikla(String mikla) {
+//		return mikla;
+//	}
+//	public static int getCurrentLielums() {
+//        return currentLielums;
+//    }
+//	public double setCena(double cena) {
+//		return cena;
+//	}
+//	public String setPiedevas(String piedevas) {
+//		return piedevas;
+//	}
+//	public static int setLielums(int lielums) {
+//		lielums=+lielums;
+//		return lielums;
+//	}
+//	public String setMerce(String merce) {
+//		 return merce;
+//	}
+//	public String setperVards(String perVards) {
+//		return perVards;
+//	}
+//	public String setTalr(String Talr) {
+//		return Talr;
+//	}
+//	public String setAdress(String adress) {
+//		return adress;
+//	}
+	static void kopums(String fNosaukums, String merce, String piedevas, String mikla, int lielums, double cena){
 		try{
-//			File fails = new File("kopums.txt");
+			File fails = new File("kopsavilkums.txt");
 			FileWriter fw= new FileWriter(fNosaukums,false);
 			PrintWriter pw= new PrintWriter(fw);
 
 
-			pw.println("šīs picas mērce ir: "+merce+"\nšīs picas piedevas ir: "+piedevas+" + "+piedevas2+" + "+piedevas2+"\nŠīs picas lielums ir: "+lielums);
+			pw.println("• Mērce : "+merce+"\n• Piedevas : "+piedevas+"\n• Mīkla : "+mikla+"\n• Lielums : "+lielums);
 			pw.close();
 			
 			

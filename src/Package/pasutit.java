@@ -30,7 +30,6 @@ public class pasutit extends JFrame implements ActionListener{
 	JPanel panel = new JPanel();
 	 private int lielums;
 	 private double cena;
-	Pizza persona;
 	  String perVards, Talr, adress,merce,piedevas,piedevas2,piedevas3,mikla;
 	pasutit(){
 		processEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
@@ -73,9 +72,7 @@ public class pasutit extends JFrame implements ActionListener{
 	    checkbox4.setContentAreaFilled(false);
 	    checkbox4.setBorderPainted(false);
 	    
-	    checkBoxGroup = new ButtonGroup();
-	      //add CheckBoxes to ButtonGroup
-	    
+	      checkBoxGroup = new ButtonGroup();
 	      checkBoxGroup.add(checkbox1);
 	      checkBoxGroup.add(checkbox2);
 	      checkBoxGroup.add(checkbox3);
@@ -109,11 +106,8 @@ public class pasutit extends JFrame implements ActionListener{
 	    ietTalak.setBounds(250,650,270,60);
 	    ietTalak.addActionListener(this);
 	    frame.add(ietTalak);
-	    
 	    frame.add(panel);
 	    frame.setVisible(true);
-		persona = new Pizza(perVards, Talr, adress, merce, piedevas,mikla,lielums,cena);
-
 }
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -128,7 +122,6 @@ public class pasutit extends JFrame implements ActionListener{
 		        }
 		        if (Uzspiests) {
 		            frame.dispose();
-		            persona = new Pizza(perVards, Talr, adress, merce, piedevas, mikla, lielums, cena);
 		            Piedevas PiedevasUNmerces = new Piedevas(lielums, cena);
 		
 		        } else {
@@ -139,9 +132,5 @@ public class pasutit extends JFrame implements ActionListener{
 		 public static void main(String args[])  
 		    {  
 			 pasutit PiedevasUNmerces = new pasutit();
-//			 int lielums = Pizza.getCurrentLielums();
-//		       Pizza s = new Pizza(null, null, null, null, null, null, null,lielums);  
-//		        s.setLielums(lielums);  
-		        
 		    }  
 }

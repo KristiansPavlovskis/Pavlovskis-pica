@@ -23,21 +23,21 @@ public class beigt extends JFrame implements ActionListener{
 	    frame.setSize(800,830);
 	    frame.setLocationRelativeTo(null);
 
-	    ImageIcon imageIcon = new ImageIcon(pica.class.getResource("/bildes/EndScreen.png"));
+	    ImageIcon imageIcon = new ImageIcon(pica.class.getResource("/bildes/beigas.png"));
 	    Image image = imageIcon.getImage();
 	    Image scaledImage = image.getScaledInstance(800, 785, Image.SCALE_SMOOTH);
 	    ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
 	    JLabel backgroundLabel = new JLabel(scaledImageIcon);
 	    panel.add(backgroundLabel, BorderLayout.CENTER);
 
-	    Turpinat.setBounds(70,670,230,80);
+	    Turpinat.setBounds(90,670,200,80);
 	    Turpinat.addActionListener(this);
 	    Turpinat.setOpaque(false);
 	    Turpinat.setContentAreaFilled(false);
 	    Turpinat.setBorderPainted(false);
 	    frame.add(Turpinat);
 	    
-	    beigt.setBounds(480,670,230,70);
+	    beigt.setBounds(490,680,210,80);
 	    beigt.addActionListener(this);
 	    beigt.setOpaque(false);
 	    beigt.setContentAreaFilled(false);
@@ -64,7 +64,7 @@ public class beigt extends JFrame implements ActionListener{
 	}
 		public static void main(String[] args) {
 			beigt checkbock = new beigt();
-			//File fails = new File("kopums.txt");
+			
 		      
 			
 		}

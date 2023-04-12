@@ -52,20 +52,7 @@ public class Gaidisana extends JFrame implements ActionListener{
         JLabel backgroundLabel = new JLabel(scaledImageIcon);
         panel.add(backgroundLabel, BorderLayout.CENTER);
 
-        Pasutit.setBounds(26,453,350,80);
-        Pasutit.addActionListener(this);
-        Pasutit.setOpaque(false);
-        Pasutit.setContentAreaFilled(false);
-        Pasutit.setBorderPainted(false);
-        frame.add(Pasutit);
-
-        Klatiene.setBounds(390,453,365,80);
-        Klatiene.addActionListener(this);
-        Klatiene.setOpaque(false);
-        Klatiene.setContentAreaFilled(false);
-        Klatiene.setBorderPainted(false);
-        frame.add(Klatiene);
-
+        
         jb = new JProgressBar(0, MAX_VERTIBA);
         jb.setValue(0);
         jb.setStringPainted(true);
@@ -80,14 +67,7 @@ public class Gaidisana extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == Pasutit) {
-            //frame.dispose();
-            //Gaidisana PicaPasutisana = new Gaidisana();
-        } else if (e.getSource() == Klatiene) {
-         //   frame.dispose();
-            //Gaidisana PicaPasutisana = new Gaidisana();
-            //Klatiene PicaKlatiene = new Klatiene();
-        }
+        
     }
     private void pildit() {
         int reizes = MAX_VERTIBA / 1000;
@@ -121,14 +101,4 @@ public class Gaidisana extends JFrame implements ActionListener{
         timer.start();
     }
     
-
-
-
-
-
-    public static void main(String[] args) {
-      //  Gaidisana checkbock = new Gaidisana(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena);
-        //File fails = new File("kopums.txt");
-        
-    }
 }

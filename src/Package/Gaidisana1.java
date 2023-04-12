@@ -111,14 +111,4 @@ this.cena=cena;
         timer.start();
     }
     
-
-
-
-
-
-    public static void main(String[] args) {
-      // Gaidisana1 checkbock = new Gaidisana1(lielums, merce, mikla, piedevas, adress, Talr, perVards);
-        //File fails = new File("kopums.txt");
-        
-    }
 }

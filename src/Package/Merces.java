@@ -41,7 +41,6 @@ public class Merces extends JFrame implements ActionListener{
 		this.merce=merce;
 		this.cena=cena;
 		cena1=cena1+cena;
-//		Pizza.izvadit( adress, Talr, perVards, merce, piedevas, lielums, mikla);
 		checkBoxGroup = new ButtonGroup();
 	    frame.setSize(700,950);
 	    frame.setLocationRelativeTo(null);
@@ -224,11 +223,6 @@ JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas mīklu!");
 			    }
        
 	}
-		public static void main(String[] args) {
-			//Merces checkbock123 = new Merces(lielums, merce,cena);
-			//File fails = new File("kopums.txt");
-		      
-			
-		}
+		
 
 }

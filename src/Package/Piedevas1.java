@@ -213,7 +213,7 @@ public class Piedevas1 extends JFrame implements ActionListener{
 			        	frame.dispose();
 			            
 			        	persona = new Pizza(perVards, Talr, adress, merce, piedevas,mikla,lielums,cena);  
-				        persona.setMerce(merce);  
+				       
 			           // Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
 			            Merces1 PiedevasUNmerce = new Merces1(lielums, merce,cena);
 			        } else {

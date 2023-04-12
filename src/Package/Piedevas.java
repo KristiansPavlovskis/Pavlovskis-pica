@@ -110,7 +110,6 @@ public class Piedevas extends JFrame implements ActionListener{
 	    
 	    
 	    checkBoxGroup = new ButtonGroup();
-	      //add CheckBoxes to ButtonGroup
 	    
 	      checkBoxGroup.add(checkbox1);
 	      checkBoxGroup.add(checkbox2);
@@ -184,8 +183,6 @@ public class Piedevas extends JFrame implements ActionListener{
 	    
 	    frame.add(panel);
 	    frame.setVisible(true);
-	   // cena=cena+cena1;
-		//
 	    persona = new Pizza(perVards, Talr, adress, merce, piedevas,mikla,lielums,cena);
 		
 }
@@ -213,8 +210,7 @@ public class Piedevas extends JFrame implements ActionListener{
 			        	frame.dispose();
 			            
 			        	persona = new Pizza(perVards, Talr, adress, merce, piedevas,mikla,lielums,cena);  
-				        persona.setMerce(merce);  
-			           // Pizza.izvadit(perVards, Talr, adress, merce, piedevas, lielums);
+				        
 			            Merces PiedevasUNmerce = new Merces(lielums, merce,cena);
 			        } else {
 			            JOptionPane.showMessageDialog(frame, "Lūdzu izvēlies kādu picas mērci!");
@@ -222,13 +218,6 @@ public class Piedevas extends JFrame implements ActionListener{
 			    }
        
 	}
-		public static void main(String args[])  
-	    {  
-			
-//	       Pizza s = new Pizza(null, null, null, merce, null, null, null,lielums);  
-//	        s.setMerce(merce);  
-	        //Piedevas PiedevasUNmerces = new Piedevas(lielums,cena);
-	    }  
 		
 
 }

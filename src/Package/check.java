@@ -4,14 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class check extends JFrame implements ActionListener{
 	JFrame frame = new JFrame();
@@ -22,7 +21,7 @@ public class check extends JFrame implements ActionListener{
 	JLabel area1, area2, area3,area4, area5, area6,area7,linija,ietaupijumi;
 	private int lielums,maksa=0;
     private double cena;
-
+   Pizza Persona;
     private String merce,piedevas,mikla,adress,Talr,perVards;
 	check(int lielums, String merce, String mikla, String piedevas,String adress,String Talr,String perVards,double cena, int maksa){
 		this.lielums = lielums;
@@ -85,8 +84,6 @@ public class check extends JFrame implements ActionListener{
         ietaupijumi = new JLabel();
         ietaupijumi.setText("KOPĒJIE IETAUPĪJUMI = "+maksa+"EUR");
         ietaupijumi.setBounds(50, 605, 520, 70);
-       // area3.setOpaque(false);
-       // area3.setFont(new Font("Arial", Font.BOLD, 30));
         Pasutit.setBounds(90,680,200,60);
 	    Pasutit.addActionListener(this);
 	    Pasutit.setOpaque(false);
@@ -106,9 +103,7 @@ public class check extends JFrame implements ActionListener{
         frame.add(area7);
         frame.add(panel);
         frame.setVisible(true);
-	    
-//	    frame.add(panel);
-//	    frame.setVisible(true);
+	    Persona = new Pizza(perVards,  Talr,  adress,  merce,  piedevas,  mikla,  lielums,  cena);
 	    
 	}	
 		@Override
@@ -116,14 +111,14 @@ public class check extends JFrame implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==Pasutit) {
 		frame.dispose();
+		Pizza.kopums("kopsavilkums.txt", merce, piedevas, mikla, lielums, cena);
+		//File fails = new File("kopsavilkums.txt");
 		beigt PicaPasutisana = new beigt();
 
 		}
        
 	}
 		public static void main(String[] args) {
-		//	check checkbock = new check(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena);
-			//File fails = new File("kopums.txt");
 		      logi asd= new logi();
 			
 		}

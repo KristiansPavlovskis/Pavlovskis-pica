@@ -79,16 +79,10 @@ public class Ceptuve extends JFrame implements ActionListener{
 
 			Gaidisana1 PicaPasutisana = new Gaidisana1(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena);
 
-			//Klatiene PicaKlatiene = new Klatiene();
+		
 
 			}
        
 	}
-		public static void main(String[] args) {
-			//Ceptuve checkbock = new Ceptuve(lielums, merce, mikla, piedevas, adress, Talr, perVards,cena);
-			//File fails = new File("kopums.txt");
-		      
-			
-		}
 
 }

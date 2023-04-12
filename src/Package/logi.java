@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class logi extends JFrame implements ActionListener{
 	JFrame frame = new JFrame();
-	JButton Klatiene = new JButton("a");
+	JButton Klatiene = new JButton("");
 	JButton Pasutit = new JButton("");
 	JLabel label = new JLabel();
 	JPanel panel = new JPanel();
@@ -64,9 +64,7 @@ public class logi extends JFrame implements ActionListener{
 	}
 		public static void main(String[] args) {
 			logi checkbock = new logi();
-			//File fails = new File("kopums.txt");
-		      
-			
+
 		}
 
 }
